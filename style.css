@@ -1,0 +1,107 @@
+/* Configuração global e fontes */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif; /* Você pode mudar a fonte aqui */
+}
+
+/* O EFEITO DE FUNDO ANIMADO 
+  Isso cria o gradiente e o anima.
+*/
+body {
+    /* As cores (roxo e verde) */
+    background: linear-gradient(-45deg, #8a2be2, #00ff7f, #8a2be2, #00ff7f);
+    background-size: 400% 400%; /* Tamanho grande para a animação */
+    animation: gradientMove 10s ease infinite; /* A animação */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+/* A animação que "move" as cores */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* O container principal */
+.container {
+    padding: 20px;
+}
+
+/* A foto de perfil redonda */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Deixa a imagem redonda */
+    border: 3px solid white;
+    object-fit: cover; /* Garante que a imagem preencha o círculo */
+    margin-bottom: 20px;
+}
+
+/* O texto principal */
+.container h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* Onde ficam os ícones */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaço entre os ícones */
+    margin-bottom: 30px;
+}
+
+/* Estilo base para os ícones */
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+    height: 65px;
+    border-radius: 18px; /* Bordas arredondadas */
+    text-decoration: none;
+    transition: transform 0.1s ease; /* Transição suave para a animação */
+}
+
+.icon i {
+    font-size: 35px; /* Tamanho do ícone (letra) */
+    color: white;
+}
+
+/* A ANIMAÇÃO DE "AFUNDAR" O BOTÃO 
+  :active é o estado de "clique"
+*/
+.icon:active {
+    transform: scale(0.9); /* Diminui o ícone para 90% */
+}
+
+/* Cores específicas dos ícones (como na sua imagem) */
+.icon-instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.icon-tiktok {
+    background: #000000;
+}
+
+/* O nome de usuário no final */
+.handle {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 2px solid white;
+    border-radius: 30px; /* Formato de "pílula" */
+    font-weight: bold;
+    font-size: 1.1rem;
+}
