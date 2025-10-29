@@ -10,15 +10,15 @@ body, html {
     font-family: Arial, sans-serif; /* Você pode mudar a fonte aqui */
 }
 
-/* O EFEITO DE FUNDO ANIMADO 
-  Isso cria o gradiente e o anima.
-*/
-/* O EFEITO DE FUNDO ANIMADO */
+/* O EFEITO DE FUNDO ANIMADO (Atualizado) */
 body {
-    background: linear-gradient(-45deg, #8a2be2, #00ff7f, #8a2be2, #00ff7f);
+    /* 2. VERDE MENOS CLARO: Trocamos #00ff7f por #3CB371 */
+    background: linear-gradient(-45deg, #8a2be2, #3CB371, #8a2be2, #3CB371);
     background-size: 400% 400%;
-    /* Nova animação: mais lenta (30s), com alternância de direção e com movimento mais complexo */
-    animation: gradientShift 30s ease infinite alternate; /* <--- NOVA ANIMAÇÃO */
+    
+    /* 1. ANIMAÇÃO MAIS LENTA E SUAVE: 60s e 'linear' */
+    animation: gradientSmooth 60s linear infinite alternate; 
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,22 +26,13 @@ body {
     color: white;
 }
 
-/* A nova animação que "move" e "alterna" as cores em diferentes direções */
-@keyframes gradientShift {
+/* 1. ANIMAÇÃO MAIS LENTA E SUAVE: Movimento diagonal */
+@keyframes gradientSmooth {
     0% {
-        background-position: 0% 0%; /* Começa no canto superior esquerdo */
-    }
-    25% {
-        background-position: 100% 0%; /* Move para o superior direito */
-    }
-    50% {
-        background-position: 100% 100%; /* Move para o inferior direito */
-    }
-    75% {
-        background-position: 0% 100%; /* Move para o inferior esquerdo */
+        background-position: 0% 100%; /* Começa em baixo-esquerda */
     }
     100% {
-        background-position: 0% 0%; /* Volta ao superior esquerdo */
+        background-position: 100% 0%; /* Termina em cima-direita */
     }
 }
 
@@ -119,4 +110,5 @@ body {
     font-size: 1.1rem;
 
 }
+
 
