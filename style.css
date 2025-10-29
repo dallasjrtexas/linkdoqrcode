@@ -13,11 +13,12 @@ body, html {
 /* O EFEITO DE FUNDO ANIMADO 
   Isso cria o gradiente e o anima.
 */
+/* O EFEITO DE FUNDO ANIMADO */
 body {
-    /* As cores (roxo e verde) */
     background: linear-gradient(-45deg, #8a2be2, #00ff7f, #8a2be2, #00ff7f);
-    background-size: 400% 400%; /* Tamanho grande para a animação */
-    animation: gradientMove 10s ease infinite; /* A animação */
+    background-size: 400% 400%;
+    /* Nova animação: mais lenta (30s), com alternância de direção e com movimento mais complexo */
+    animation: gradientShift 30s ease infinite alternate; /* <--- NOVA ANIMAÇÃO */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,11 +26,23 @@ body {
     color: white;
 }
 
-/* A animação que "move" as cores */
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* A nova animação que "move" e "alterna" as cores em diferentes direções */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 0%; /* Começa no canto superior esquerdo */
+    }
+    25% {
+        background-position: 100% 0%; /* Move para o superior direito */
+    }
+    50% {
+        background-position: 100% 100%; /* Move para o inferior direito */
+    }
+    75% {
+        background-position: 0% 100%; /* Move para o inferior esquerdo */
+    }
+    100% {
+        background-position: 0% 0%; /* Volta ao superior esquerdo */
+    }
 }
 
 /* O container principal */
@@ -104,4 +117,5 @@ body {
     border-radius: 30px; /* Formato de "pílula" */
     font-weight: bold;
     font-size: 1.1rem;
+
 }
